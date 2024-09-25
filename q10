@@ -1,0 +1,67 @@
+// Vehicle Class
+class Vehicle {
+    protected String regnNumber, color, ownerName;
+    protected int speed;
+
+    public Vehicle(String regnNumber, String color, String ownerName, int speed) {
+        this.regnNumber = regnNumber;
+        this.color = color;
+        this.ownerName = ownerName;
+        this.speed = speed;
+    }
+
+    public void showData() {
+        System.out.println("This is a vehicle class.");
+    }
+}
+
+// Bus Class
+class Bus extends Vehicle {
+    private int routeNumber;
+
+    public Bus(String regnNumber, String color, String ownerName, int speed, int routeNumber) {
+        super(regnNumber, color, ownerName, speed);
+        this.routeNumber = routeNumber;
+    }
+
+    @Override
+    public void showData() {
+        super.showData();
+        System.out.println("Bus Route Number: " + routeNumber);
+        System.out.println("Registration Number: " + regnNumber);
+        System.out.println("Color: " + color);
+        System.out.println("Owner: " + ownerName);
+        System.out.println("Speed: " + speed + " km/h");
+    }
+}
+
+// Car Class
+class Car extends Vehicle {
+    private String manufacturerName;
+
+    public Car(String regnNumber, String color, String ownerName, int speed, String manufacturerName) {
+        super(regnNumber, color, ownerName, speed);
+        this.manufacturerName = manufacturerName;
+    }
+
+    @Override
+    public void showData() {
+        super.showData();
+        System.out.println("Car Manufacturer: " + manufacturerName);
+        System.out.println("Registration Number: " + regnNumber);
+        System.out.println("Color: " + color);
+        System.out.println("Owner: " + ownerName);
+        System.out.println("Speed: " + speed + " km/h");
+    }
+}
+
+// Main Class to Test
+public class Main {
+    public static void main(String[] args) {
+        Bus bus = new Bus("MP09-AB1234", "Blue", "John Doe", 60, 25);
+        bus.showData();
+
+        Car car = new Car("MP09-CD5678", "Red", "Jane Doe", 80, "Toyota");
+        car.showData();
+    }
+}
