@@ -1,0 +1,24 @@
+class DivideByZeroException extends Exception {
+    public DivideByZeroException(String message) {
+        super(message);
+    }
+}
+
+class NegativeNumberException extends Exception {
+    public NegativeNumberException(String message) {
+        super(message);
+    }
+}
+
+public class ArithmeticExceptionHandling {
+    public static void main(String[] args) {
+        try {
+            int a = 10, b = -5;
+            if (b == 0) throw new DivideByZeroException("Cannot divide by zero!");
+            if (b < 0) throw new NegativeNumberException("Negative divisor not allowed!");
+            System.out.println("Result: " + (a / b));
+        } catch (DivideByZeroException | NegativeNumberException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
