@@ -1,0 +1,28 @@
+class InvalidUsernameException extends Exception {
+    public InvalidUsernameException(String message) {
+        super(message);
+    }
+}
+
+class InvalidPasswordException extends Exception {
+    public InvalidPasswordException(String message) {
+        super(message);
+    }
+}
+
+public class UserAuthentication {
+    public static void main(String[] args) {
+        try {
+            String username = "user"; // Example input
+            String password = "123456";
+
+            if (username.length() < 6) throw new InvalidUsernameException("Username is too short!");
+            if (!password.equals("password123")) throw new InvalidPasswordException("Password does not match!");
+
+            System.out.println("Login Successful!");
+
+        } catch (InvalidUsernameException | InvalidPasswordException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
