@@ -1,0 +1,99 @@
+// Base class
+class ThreeDObject {
+    public double wholeSurfaceArea() {
+        return 0;
+    }
+    public double volume() {
+        return 0;
+    }
+}
+
+// Derived class for Box
+class Box extends ThreeDObject {
+    double length, width, height;
+    Box(double l, double w, double h) {
+        length = l;
+        width = w;
+        height = h;
+    }
+    @Override
+    public double wholeSurfaceArea() {
+        return 2 * (length * width + width * height + height * length);
+    }
+    @Override
+    public double volume() {
+        return length * width * height;
+    }
+}
+
+// Derived class for Cube
+class Cube extends ThreeDObject {
+    double side;
+    Cube(double s) {
+        side = s;
+    }
+    @Override
+    public double wholeSurfaceArea() {
+        return 6 * side * side;
+    }
+    @Override
+    public double volume() {
+        return side * side * side;
+    }
+}
+
+// Derived class for Cylinder
+class Cylinder extends ThreeDObject {
+    double radius, height;
+    Cylinder(double r, double h) {
+        radius = r;
+        height = h;
+    }
+    @Override
+    public double wholeSurfaceArea() {
+        return 2 * Math.PI * radius * (radius + height);
+    }
+    @Override
+    public double volume() {
+        return Math.PI * radius * radius * height;
+    }
+}
+
+// Derived class for Cone
+class Cone extends ThreeDObject {
+    double radius, height;
+    Cone(double r, double h) {
+        radius = r;
+        height = h;
+    }
+    @Override
+    public double wholeSurfaceArea() {
+        double slantHeight = Math.sqrt(radius * radius + height * height);
+        return Math.PI * radius * (radius + slantHeight);
+    }
+    @Override
+    public double volume() {
+        return (Math.PI * radius * radius * height) / 3;
+    }
+}
+
+// Main class to test
+public class Main {
+    public static void main(String[] args) {
+        Box box = new Box(2, 3, 4);
+        System.out.println("Box Surface Area: " + box.wholeSurfaceArea());
+        System.out.println("Box Volume: " + box.volume());
+        
+        Cube cube = new Cube(3);
+        System.out.println("Cube Surface Area: " + cube.wholeSurfaceArea());
+        System.out.println("Cube Volume: " + cube.volume());
+        
+        Cylinder cylinder = new Cylinder(3, 5);
+        System.out.println("Cylinder Surface Area: " + cylinder.wholeSurfaceArea());
+        System.out.println("Cylinder Volume: " + cylinder.volume());
+        
+        Cone cone = new Cone(3, 5);
+        System.out.println("Cone Surface Area: " + cone.wholeSurfaceArea());
+        System.out.println("Cone Volume: " + cone.volume());
+    }
+}
