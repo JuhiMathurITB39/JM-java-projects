@@ -1,0 +1,35 @@
+class Distance {
+    double miles;
+
+    public Distance(double miles) {
+        this.miles = miles;
+    }
+
+    public void travelTime() {
+        System.out.println("Time taken (in hours): " + (miles / 60));
+    }
+}
+
+class DistanceMKS extends Distance {
+    double kilometers;
+
+    public DistanceMKS(double kilometers) {
+        super(kilometers * 0.621371); // converting km to miles
+        this.kilometers = kilometers;
+    }
+
+    @Override
+    public void travelTime() {
+        System.out.println("Time taken (in hours): " + (kilometers / 100)); // speed: 100 km/h
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Distance distMiles = new Distance(120);
+        distMiles.travelTime();
+
+        DistanceMKS distKM = new DistanceMKS(150);
+        distKM.travelTime();
+    }
+}
