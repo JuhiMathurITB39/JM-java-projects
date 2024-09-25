@@ -1,0 +1,22 @@
+class NoMatchFoundException extends Exception {
+    public NoMatchFoundException(String message) {
+        super(message);
+    }
+}
+
+public class CapitalFinder {
+    public static void main(String[] args) {
+        String country = args.length > 0 ? args[0] : "";
+        try {
+            if (country.equalsIgnoreCase("India")) {
+                System.out.println("Capital: New Delhi");
+            } else if (country.equalsIgnoreCase("USA")) {
+                System.out.println("Capital: Washington D.C.");
+            } else {
+                throw new NoMatchFoundException("No match found for the entered country!");
+            }
+        } catch (NoMatchFoundException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
