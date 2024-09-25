@@ -1,0 +1,15 @@
+public class MultipleExceptionsDemo {
+    public static void main(String[] args) {
+        try {
+            int[] arr = new int[-5]; // NegativeArraySizeException
+        } catch (NegativeArraySizeException e) {
+            System.out.println("Array size cannot be negative!");
+        }
+
+        try {
+            int result = 10 / 0; // ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");
+        }
+    }
+}
