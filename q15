@@ -1,0 +1,20 @@
+class Student {
+    int rollNo;
+    String name;
+
+    public Student(int rollNo, String name) {
+        this.rollNo = rollNo;
+        this.name = name;
+    }
+
+    public void display() {
+        System.out.println("Roll No: " + this.rollNo + ", Name: " + this.name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student(101, "Alice");
+        student.display();
+    }
+}
