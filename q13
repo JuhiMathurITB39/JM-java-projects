@@ -1,0 +1,26 @@
+class Animal {
+    public void eat() {
+        System.out.println("Animal eats food.");
+    }
+}
+
+class Mammal extends Animal {
+    public void breathe() {
+        System.out.println("Mammal breathes air.");
+    }
+}
+
+class Dog extends Mammal {
+    public void bark() {
+        System.out.println("Dog barks.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();      // Inherited from Animal
+        dog.breathe();  // Inherited from Mammal
+        dog.bark();     // From Dog class
+    }
+}
