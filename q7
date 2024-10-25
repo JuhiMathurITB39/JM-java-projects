@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class GradingSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter percentage: ");
+        int percentage = scanner.nextInt();
+        char grade = (percentage >= 90) ? 'A' :
+                     (percentage >= 80) ? 'B' :
+                     (percentage >= 70) ? 'C' :
+                     (percentage >= 60) ? 'D' :
+                     (percentage >= 40) ? 'E' : 'F';
+        System.out.println("Grade: " + grade);
+    }
+}
