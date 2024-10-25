@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class SumNaturalNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a range: ");
+        int range = scanner.nextInt();
+        int sum = (range * (range + 1)) / 2;
+        System.out.println("Sum of natural numbers up to " + range + ": " + sum);
+    }
+}
