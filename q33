@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class Commission {
+    private double sales;
+
+    public Commission(double sales) {
+        this.sales = sales;
+    }
+
+    public double calculateCommission() {
+        return sales * 0.1; // Example: 10% commission rate
+    }
+}
+
+public class CommissionDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter sales amount: ");
+        double sales = scanner.nextDouble();
+
+        if (sales < 0) {
+            System.out.println("Invalid Input");
+        } else {
+            Commission commission = new Commission(sales);
+            System.out.println("Commission: " + commission.calculateCommission());
+        }
+    }
+}
