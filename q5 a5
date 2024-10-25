@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class MilesToKilometers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter distance in miles: ");
+        double miles = scanner.nextDouble();
+        System.out.println("Distance in kilometers: " + (miles * 1.60934));
+    }
+}
