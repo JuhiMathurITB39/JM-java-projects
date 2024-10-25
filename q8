@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class DivisibilityCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter dividend: ");
+        int num = scanner.nextInt();
+        System.out.print("Enter divisor: ");
+        int divisor = scanner.nextInt();
+        System.out.println(num % divisor == 0 ? "Divisible" : "Not Divisible");
+    }
+}
