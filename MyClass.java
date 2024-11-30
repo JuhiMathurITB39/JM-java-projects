@@ -1,0 +1,11 @@
+public class MyClass {
+    private int x;
+    public MyClass() {
+    x = 0;
+    System.out.println("No-argument constructor called...");
+    }
+    public static void main(String[] args) { //main method
+    MyClass obj = new MyClass();
+    }
+}
+

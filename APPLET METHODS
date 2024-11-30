@@ -1,0 +1,41 @@
+import java.awt.*;
+import java.applet.*;
+
+/*
+<applet code="AppletSkel" width=300 height=100>
+</applet>
+*/
+public class AppletSkel extends Applet {
+    // Called first.
+    public void init() {
+        // Initialization
+        setBackground(Color.lightGray);
+    }
+
+    /* Called second, after init(). Also called whenever
+     the applet is restarted. */
+    public void start() {
+        // Start or resume execution
+    }
+
+    // Called when the applet is stopped.
+    public void stop() {
+        // Suspends execution
+    }
+
+    /* Called when applet is terminated. This is the last
+     method executed. */
+    public void destroy() {
+        // Perform shutdown activities
+    }
+
+    // Called when an applet’s window must be restored.
+    public void paint(Graphics g) {
+        // Redisplay contents of window
+        g.setColor(Color.blue);
+        g.drawString("Welcome to Applet!", 50, 50);
+
+        g.setColor(Color.red);
+        g.drawRect(40, 40, 220, 50);
+    }
+}
